@@ -5,8 +5,138 @@
  * Licensed under the ISC license.
  */
 
-'use strict'
+// require the module
+var rendr = require('rendr')
 
-module.exports = function () {
-  // do stuff
+// setup a configuration object or create a RENDR.cson file in root directory
+// this of course is all preliminary. Just wanted to get this working.
+var configuration = {
+  // defaults object aka options
+  defaults: {
+    // General
+    // build directory
+    destination   : 'build',
+    // asset staging
+    stagingArea   : 'assets',
+    // where static assets reside
+    staticAssets  : 'support',
+    // really this is just the extension to use for files. not really an engine.
+    engine        : 'html',
+    // default layout name
+    defaultLayout : 'default',
+    // regex to filter out directory structure from build directory so I may
+    // calculate relative paths easier. If you have a flat structure this should
+    // not be a problem. But I doubt it.
+    templateRoot  : /(layouts\/templates\/(views|src))/,
+
+
+    // Glob Files
+    layouts   : 'layouts/{globals,regions}/*.hbs',
+    templates : 'layouts/templates/views/**/*.hbs',
+    sources   : 'layouts/templates/src/*.hbs',
+    modules   : 'pages/**/*.hbs',
+    partials  : 'layouts/sectors/*.hbs',
+    helpers   : 'helpers/*.js',
+    styles    : 'styles/**/*.{less,css}',
+    scripts   : 'scripts/**/*.js',
+    support   : 'support/**/*',
+    stage     : 'assets/{img,pdf,fonts}/**/*',
+    context   : 'config/**/*.cson',
+    html      : 'build/**/*.html',
+    build     : ['build/**/*', '!build/assets/**', '!build/assets'],
+    // Tree support
+    css       : 'assets/css/*.css',
+    js        : 'assets/js/*.js',
+    ico       : 'assets/ico/*.{png,ico}',
+    img       : 'assets/img/**/*',
+    pdf       : 'assets/pdf/*.pdf',
+    fonts     : 'assets/fonts/*',
+    code      : 'scripts/views/{configs,snippets}/*.js',
+
+    // Less files processing
+    LESSfilez: {
+      development : 'styles/development.less',
+      theme       : 'styles/theme.less',
+      vendor      : 'styles/vendor.less',
+      bootstrap   : 'styles/framework.less',
+      styles      : 'styles/styles.less'
+    },
+
+    SCRPTfilez: {
+      bootstrap: [
+        'scripts/bootstrap/transition.js',
+        'scripts/bootstrap/alert.js',
+        'scripts/bootstrap/button.js',
+        'scripts/bootstrap/carousel.js',
+        'scripts/bootstrap/collapse.js',
+        'scripts/bootstrap/dropdown.js',
+        'scripts/bootstrap/modal.js',
+        'scripts/bootstrap/tooltip.js',
+        'scripts/bootstrap/popover.js',
+        'scripts/bootstrap/scrollspy.js',
+        'scripts/bootstrap/tab.js',
+        'scripts/bootstrap/affix.js'
+      ],
+      plugins : 'scripts/plugins/*.js',
+      libs    : 'scripts/libs/**/*.js',
+      theme   : 'scripts/theme/*.js',
+      dev     : 'scripts/dev/*.js'
+    },
+
+    static: {
+      css   : 'assets/css/*.css',
+      js    : 'assets/js/*.js',
+      ico   : 'assets/ico/*.{png,ico}',
+      img   : 'assets/img/**/*',
+      pdf   : 'assets/pdf/*.pdf',
+      fonts : 'assets/fonts/*'
+    },
+
+    // favicon support
+    icoIMG: 'support/img/SimFitLogo.png',
+
+    // Static asset paths (rsync)
+    paths: {
+      img   : 'assets/img',
+      pdf   : 'assets/pdf',
+      ico   : 'assets/ico',
+      fonts : 'assets/fonts',
+      js    : 'assets/js',
+      css   : 'assets/css'
+    }
+
+    // paths2: {
+    //   static: {
+    //     img   : ['assets/img', '/**/*'],
+    //     pdf   : ['assets/pdf', '/*.pdf'],
+    //     ico   : ['assets/ico', '/*.{png,ico}'],
+    //     fonts : ['assets/fonts', '/*'],
+    //     js    : ['assets/js', '/*.js'],
+    //     css   : ['assets/css', '/*.css']
+    //   },
+    //   tree: {
+    //     code  : ['scripts/views', '/{configs,snippets}/*.js']
+    //   }
+    // }
+  },
+
+  globals: {
+    // Partial str replacements
+    _html       : 'html',
+    head        : 'head',
+    body        : 'body',
+    main        : 'main',
+    HEAD        : '_head',
+    SCRIPTS     : 'head-scripts',
+    STYLES      : 'head-styles',
+    SOCIAL      : 'head-social',
+    FOOT        : '_foot',
+    PRODUCTION  : 'foot-base',
+    DEVELOPMENT : 'foot-dev',
+    NAVBAR      : 'navbar',
+    NAVLINK     : 'navlink',
+    NAVROUTES   : 'navRoutes'
+  }
 }
+
+rendr(configuration)
