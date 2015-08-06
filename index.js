@@ -31,6 +31,8 @@ var configuration = {
 
 
     // Glob Files
+    // really a routing system. just glob it all. I tried to iterate over
+    // everything.
     layouts   : 'layouts/{globals,regions}/*.hbs',
     templates : 'layouts/templates/views/**/*.hbs',
     sources   : 'layouts/templates/src/*.hbs',
@@ -45,6 +47,8 @@ var configuration = {
     html      : 'build/**/*.html',
     build     : ['build/**/*', '!build/assets/**', '!build/assets'],
     // Tree support
+    // section is used to build an object of file paths of project assets.
+    // I dislike adding strings for filepaths in helpers very very very much.
     css       : 'assets/css/*.css',
     js        : 'assets/js/*.js',
     ico       : 'assets/ico/*.{png,ico}',
@@ -54,6 +58,9 @@ var configuration = {
     code      : 'scripts/views/{configs,snippets}/*.js',
 
     // Less files processing
+    // global less files used for aggregating the less development
+    // structure within. Only this files will be created. Makes things
+    // easy for me.
     LESSfilez: {
       development : 'styles/development.less',
       theme       : 'styles/theme.less',
@@ -105,6 +112,7 @@ var configuration = {
       css   : 'assets/css'
     }
 
+    // Was testing a different method here...
     // paths2: {
     //   static: {
     //     img   : ['assets/img', '/**/*'],
@@ -122,6 +130,8 @@ var configuration = {
 
   globals: {
     // Partial str replacements
+    // None of this is needed. Put you handlebars contextual data here
+    // or create a .cson file to be read in.
     _html       : 'html',
     head        : 'head',
     body        : 'body',

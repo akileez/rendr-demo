@@ -7,8 +7,22 @@ $ npm install akileez\rendr-demo
 ```
 
 ## Usage
-```js
 
+See index.js for the configuration object.
+
+```js
+var rendr = require('rendr')
+var config = {
+  defaults: {
+    //...
+  },
+  
+  globals: {
+    // handlebars contextual stuff can go here
+  }
+}
+
+rendr(config)
 ```
 
 ## Directory Structure
