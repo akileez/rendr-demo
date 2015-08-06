@@ -16,7 +16,7 @@ var config = {
   defaults: {
     //...
   },
-  
+
   globals: {
     // handlebars contextual stuff can go here
   }
@@ -24,6 +24,28 @@ var config = {
 
 rendr(config)
 ```
+to keep things simple and ensure the fundamentals of the module works, run as follows:
+
+```bash
+# -w is for watch
+node index.js -w 
+```
+
+this will `rendr` your templates and start a watch session.
+
+Optional commands for a base run without any problems occurring are:
+
+```bash
+node index.js globals
+node index.js defaults
+node index.js config --type defaults
+node index.js config --type globals
+node index.js jobs
+node index.js clean
+```
+
+
+
 
 ## Directory Structure
 
