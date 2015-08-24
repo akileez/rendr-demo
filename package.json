@@ -1,6 +1,6 @@
 {
   "name": "rendr-demo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "demo progect for rendr",
   "main": "index.js",
   "scripts": {
