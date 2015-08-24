@@ -52,7 +52,7 @@ var configuration = {
     css       : 'assets/css/*.css',
     js        : 'assets/js/*.js',
     ico       : 'assets/ico/*.{png,ico}',
-    img       : 'assets/img/**/*',
+    img       : 'assets/img/**/*.*',
     pdf       : 'assets/pdf/*.pdf',
     fonts     : 'assets/fonts/*',
     code      : 'scripts/views/{configs,snippets}/*.js',
@@ -65,7 +65,7 @@ var configuration = {
       development : 'styles/development.less',
       theme       : 'styles/theme.less',
       vendor      : 'styles/vendor.less',
-      bootstrap   : 'styles/framework.less',
+      framework   : 'styles/framework.less',
       styles      : 'styles/styles.less'
     },
 
@@ -94,7 +94,7 @@ var configuration = {
       css   : 'assets/css/*.css',
       js    : 'assets/js/*.js',
       ico   : 'assets/ico/*.{png,ico}',
-      img   : 'assets/img/**/*',
+      img   : 'assets/img/**/*.*',
       pdf   : 'assets/pdf/*.pdf',
       fonts : 'assets/fonts/*'
     },
