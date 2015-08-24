@@ -70,19 +70,19 @@ var configuration = {
     },
 
     SCRPTfilez: {
-      bootstrap: [
-        'scripts/bootstrap/transition.js',
-        'scripts/bootstrap/alert.js',
-        'scripts/bootstrap/button.js',
-        'scripts/bootstrap/carousel.js',
-        'scripts/bootstrap/collapse.js',
-        'scripts/bootstrap/dropdown.js',
-        'scripts/bootstrap/modal.js',
-        'scripts/bootstrap/tooltip.js',
-        'scripts/bootstrap/popover.js',
-        'scripts/bootstrap/scrollspy.js',
-        'scripts/bootstrap/tab.js',
-        'scripts/bootstrap/affix.js'
+      framework: [
+        'scripts/framework/transition.js',
+        'scripts/framework/alert.js',
+        'scripts/framework/button.js',
+        'scripts/framework/carousel.js',
+        'scripts/framework/collapse.js',
+        'scripts/framework/dropdown.js',
+        'scripts/framework/modal.js',
+        'scripts/framework/tooltip.js',
+        'scripts/framework/popover.js',
+        'scripts/framework/scrollspy.js',
+        'scripts/framework/tab.js',
+        'scripts/framework/affix.js'
       ],
       plugins : 'scripts/plugins/*.js',
       libs    : 'scripts/libs/**/*.js',
